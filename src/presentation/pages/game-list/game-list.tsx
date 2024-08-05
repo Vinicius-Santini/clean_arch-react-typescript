@@ -23,7 +23,7 @@ function GameList ({loadGameList}: Props) {
                     gameList.results.map((game) => (
                         <GameCard game={game}/>
                     )) :
-                    <p>Carregando...</p>
+                    <p>Loading...</p>
                 }
             </div>
         </div>
