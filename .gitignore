@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 
-api-url-factory.ts
+apiKey.ts
