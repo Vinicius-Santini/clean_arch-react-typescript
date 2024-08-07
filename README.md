@@ -35,7 +35,3 @@ O diagrama acima mostra as camadas em que o projeto está separado e suas depend
 - Tem classes que geram instâncias de outras classes
 - Tem o index da aplicação.
 - Faz Injeção de Dependência.
-
-
-## Outro
-Este projeto ainda não possui estilos muito trabalhados e/ou polidos, também ainda não tem tantas funcionalidades, pois como citado o objetivo é demonstrar o conhecimento e aplicação da Clean Architecture em uma aplicação.
