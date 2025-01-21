@@ -1,37 +1,37 @@
-## Objetivo
-Este projeto visa demonstrar a aplicação da Clean Architecture e alguns princípios SOLID
-em uma aplicação frontend.
+## Objective
+This project aims to demonstrate the application of Clean Architecture and some SOLID principles in a frontend application.
 
-Como o maior foco deste projeto é implementar a arquitetura e demonstrar que a mesma é funcional, o projeto por enquanto possui apenas a listagem dos jogos fornecidos pela RAWG API e, ao clicar no título de cada jogo, a navegação para a tela do jogo em questão.
+Since the main focus of this project is to implement the architecture and prove its functionality, the project currently only includes a listing of games provided by the RAWG API and, when clicking on a game's title, navigates to the respective game details screen.
 
-## A arquitetura:
+## The Architecture:
 
 ![MyArchitecture drawio](https://github.com/user-attachments/assets/883bd1a9-fad3-4d8c-bb9a-83b69a36b14a)
 
-O diagrama acima mostra as camadas em que o projeto está separado e suas dependências, abaixo você encontrará uma explicação mais detalhada do objetivo e função de cada camada.
+The diagram above illustrates the layers in which the project is structured and their dependencies. Below, you will find a more detailed explanation of the purpose and function of each layer.
 
 **Infra**
--  A camada de Infra é utilizada para implementar os protocolos definidos na Data layer.
--  Esta camada depende da camada de Data e de uma biblioteca externa, no caso o Axios.
-- Devido a apenas implementar o que foi definido na Data layer, aqui podemos definir como será feita a implementação sem impactar as outras camadas, poderíamos, por exemplo, parar de utilizar axios e passar à utilizar outra alternativa sem gerar impacto em outras camadas.
+The Infra layer is responsible for implementing the protocols defined in the Data layer.
+- This layer depends on the Data layer and an external library (in this case, Axios).
+- Since it only implements what is defined in the Data layer, we can define how the implementation will be done without affecting other layers. For example, we could replace Axios with another alternative without impacting the other layers.
 
 **Data**
-- A camada de Data faz a implementação dos casos de uso, possuindo a classes que vão implementar os protocolos da Domain layer.
-- A Data layer depende da Domain layer.
-- Ela não se comunica com a API diretamente, apenas define o protocolo que fará o acesso à API.
-
+The Data layer is responsible for implementing use cases, containing the classes that will implement the protocols from the Domain layer.
+- The Data layer depends on the Domain layer.
+- It does not communicate directly with the API; it only defines the protocol that will handle API access.
+  
 **Domain**
-- A Domain layer possui a regra de negócio. Criando a regra de negócio como interface, apenas define o que a interface precisa e o que ela deve retornar.
-- Define apenas a regra, e não o como.
-- Independente das outras camadas.
+The Domain layer contains the business logic.
+- By defining business rules as interfaces, it only specifies what the interface needs and what it should return.
+- It defines only the rules, not the implementation details.
+- It is independent of other layers.
 
 **Presentation**
-- Renderiza a view, cuida da navegação e do gerenciamento de estado.
-- Depende de um caso de uso do Domain.
+Responsible for rendering the view, handling navigation, and managing state.
+- Depends on a use case from the Domain layer.
 
 **Main**
-- Depende de todas camadas.
-- Utiliza design patterns, como factories.
-- Tem classes que geram instâncias de outras classes
-- Tem o index da aplicação.
-- Faz Injeção de Dependência.
+- Depends on all layers.
+- Uses design patterns, such as factories.
+- Contains classes that instantiate other classes.
+- Includes the application’s index file.
+- Responsible for Dependency Injection.
