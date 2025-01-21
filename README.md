@@ -1,5 +1,5 @@
 ## Objective
-This project aims to demonstrate the application of Clean Architecture and some SOLID principles in a frontend application.
+This project aims to demonstrate the application of Clean Architecture and some SOLID principles in a *React/Typescript* application.
 
 Since the main focus of this project is to implement the architecture and prove its functionality, the project currently only includes a listing of games provided by the RAWG API and, when clicking on a game's title, navigates to the respective game details screen.
 
